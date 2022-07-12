@@ -1,38 +1,223 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  width: 100%;
   min-height: 100vh;
+  background-image: url("./images/bg-intro-desktop.png");
+  background-repeat: no-repeat;
+  background-color: hsl(0, 100%, 74%);
+  /* background-size: cover; */
+  
+}
+
+.container{
+  width: 100%;
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 150px;
+}
+
+/* Intro Text Styling */
+.intro-text{
+  /* padding: 0px 0px 0px 0px */
+  flex: 1;
+}
+
+.intro-text--header{
+  font-size: 48px;
+  line-height: 1.2em;
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+}
+
+.intro-text--paragraph{
+  color:hsl(0, 0%, 100%);
+}
+
+/* Form Componnents Styling */
+.form{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.form--heading{
+  text-align: center;
+  background-color: hsl(248, 32%, 49%);
+  padding: 13px 30px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 1px 5px hsla(249, 10%, 26%, 0.2);
+  font-size: 12px;
+  color: hsl(0, 0%, 100%);
+  font-weight: 400;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.form-control{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 40px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 8px;
+}
+
+.form-control > div{
+  width: 100%;
+}
+
+.form--input--div-holder > div > input{
+  /* display: block; */
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid hsla(249, 10%, 26%, 0.1);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.form--input--div-holder{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.form--input-area{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.form--input-area > input{
+  flex: 1;
+}
+
+.form--input-area > span{
+  /* flex: 1; */
+  position: absolute;
+  right: 15px;
+  top: 10px
+}
+
+.error-icon{
+  margin-left: -50px;
+  margin-right: 0px;
+  font-weight: 700;
+  visibility: hidden;
+}
+
+.show-error-icon{
+  visibility: visible !important;
+}
+
+.error{
+  border-color: hsl(0, 100%, 74%) !important;
+  outline-color: hsl(0, 100%, 74%) !important;
+}
+
+
+.error-message{
+  font-size: 11px;
+  text-align: end;
+  color: hsl(0, 100%, 74%);
+  visibility: hidden;
+}
+
+.form--input-area > input:focus{
+  border: none;
+  outline-color: hsla(248, 32%, 49%, 0.5);
+  outline-width: thin;
+}
+
+.form-control > button{
+  display: block;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: hsl(154, 59%, 51%);
+  color: hsl(0, 0%, 100%);
+  text-transform: uppercase;
+  font-weight: 700;
+  box-shadow: 1px 2px hsl(154, 59%, 51%, 0.6);
+  cursor: pointer;
+}
+
+.form--tnc{
+  font-size: 11px;
+  text-align: center;
+  color: hsl(246, 25%, 77%);
+}
+
+.form--tnc > a{
+  color: hsl(0, 100%, 74%);
+}
+
+/* Attribution Styles */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 5px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/* Media Stylings */
+@media only screen and (max-width: 599px){
+  .App{
+    background-image: url("../src/images/bg-intro-mobile.png");
   }
-  to {
-    transform: rotate(360deg);
+  .container{
+    display: grid;
+    grid-template-columns: 330px;
+    padding-top: 100px;
+    margin-right: 0px;
+    margin-left: 0px;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .intro-text{
+    
+  }
+
+  .intro-text--header {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .form{
+    margin-bottom: 30px;
+    flex: 1;
+  }
+
+  .form-control{
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 280px){
+  .container{
+    grid-template-columns: 250px;
+    padding-top: 100px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+
+@media only screen and (min-width: 600px){
+  .App{
+    height: 100vh;
+  }
+  
+  .container{
+    padding: 0px 50px;
   }
 }
