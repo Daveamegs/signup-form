@@ -1,6 +1,5 @@
 import React from "react";
 import ErrorIcon from "../images/icon-error.svg";
-import VerifyEmail from "./VerifyEmail";
 
 const Form = () => {
   const [userDetails, setUserDetails] = React.useState({
@@ -10,7 +9,6 @@ const Form = () => {
     password: "",
   });
 
-  // const [error, setError] = React.useState("");
 
   const handleChange = (event) => {
     const name = event.target.name;

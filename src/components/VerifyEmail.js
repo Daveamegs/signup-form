@@ -1,5 +1,3 @@
-import React from "react";
-
 const VerifyEmail = (email) => {
   return String(email)
     .toLowerCase()
